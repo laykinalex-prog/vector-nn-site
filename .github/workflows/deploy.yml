@@ -16,6 +16,7 @@ jobs:
           cp index.html /tmp/_site/
           base64 -d assets.tgz.b64 | tar xzf - -C /tmp/_site
           touch /tmp/_site/.nojekyll
+          printf 'vector52.ru' > /tmp/_site/CNAME
           cd /tmp/_site
           git init -q -b site-build
           git config user.name "github-actions"
