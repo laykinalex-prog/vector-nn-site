@@ -1,34 +1,25 @@
-name: Deploy Pages
+name: Build site branch
 on:
   push:
     branches: [main]
   workflow_dispatch:
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-concurrency:
-  group: pages
-  cancel-in-progress: true
+  contents: write
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.d.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - name: Decode binaries
+      - name: Decode binaries and publish to site-build branch
         run: |
-          mkdir -p _site
-          cp index.html _site/
-          base64 -d assets.tgz.b64 | tar xzf - -C _site
-          touch _site/.nojekyll
-      - uses: actions/configure-pages@v5
-        with:
-          enablement: true
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
-      - id: d
-        uses: actions/deploy-pages@v4
+          mkdir -p /tmp/_site
+          cp index.html /tmp/_site/
+          base64 -d assets.tgz.b64 | tar xzf - -C /tmp/_site
+          touch /tmp/_site/.nojekyll
+          cd /tmp/_site
+          git init -q -b site-build
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add -A
+          git commit -qm "Build site"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" site-build
