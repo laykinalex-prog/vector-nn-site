@@ -25,8 +25,12 @@ section{padding:80px 0}h2{font-size:clamp(26px,3.5vw,38px);font-weight:800;margi
 #contacts{padding:48px 0}#contacts h2{font-size:clamp(22px,3vw,30px);margin-bottom:16px}
 .cts{display:flex;flex-direction:column;gap:10px;max-width:520px}
 .crow{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
-.crow a:not(.mb){font-weight:700;font-size:16px;text-decoration:none}
-#contacts .mb{font-size:12px;padding:6px 10px}
+.crow a:not(.icm){font-weight:700;font-size:16px;text-decoration:none}
+.icm{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:8px;flex-shrink:0;text-decoration:none}
+.icm svg{width:16px;height:16px;display:block}
+.icm.tg{background:#229ed9}
+.icm.mx{background:linear-gradient(135deg,#4b2ff0,#4fd1f5)}
+.icm.mail{background:#4b2ff0}
 .addr{margin-top:20px;color:var(--m);font-size:16px;max-width:640px}
 footer{background:var(--t);color:#b9b9cf;padding:32px 0;font-size:14px}footer .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}footer a{color:#fff}
 @media(max-width:760px){.hero{padding:60px 0}section{padding:56px 0}header .w{height:92px}.logo img{height:72px}header .btn{padding:10px 14px;font-size:13px}}
@@ -66,9 +70,9 @@ footer{background:var(--t);color:#b9b9cf;padding:32px 0;font-size:14px}footer .w
 <section id="contacts"><div class="w">
 <h2>Наши контакты</h2>
 <div class="cts">
-<div class="crow"><a href="tel:+79108750011">+7 910 875-00-11</a><a class="mb tg" href="https://t.me/+79108750011" target="_blank" rel="noopener">Telegram</a></div>
-<div class="crow"><a href="tel:+79108750022">+7 910 875-00-22</a><a class="mb tg" href="https://t.me/+79108750022" target="_blank" rel="noopener">Telegram</a></div>
-<div class="crow"><a href="mailto:rezkann@bk.ru">rezkann@bk.ru</a><a class="mb mx" href="https://max.ru/u/f9LHodD0cOIa2guzvRmWNece4hvO4FoFel16nZ0ovfkyx26Pc7wH9HhJsGc" target="_blank" rel="noopener">Написать в MAX</a></div>
+<div class="crow"><a href="tel:+79108750011">+7 910 875-00-11</a><a class="icm tg" href="https://t.me/+79108750011" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M21.8 4.1 2.9 11.4c-1.3.5-1.3 1.2-.2 1.5l4.8 1.5 11.1-7c.5-.3.9-.1.5.3l-9 8.6-.3 4.4c.5 0 .7-.2 1-.6l2.4-2.3 5 3.7c.9.5 1.5.2 1.8-.9L23.2 5.5c.3-1.2-.5-1.8-1.4-1.4z"/></svg></a><a class="icm mx" href="https://max.ru/u/f9LHodD0cOIa2guzvRmWNece4hvO4FoFel16nZ0ovfkyx26Pc7wH9HhJsGc" target="_blank" rel="noopener" aria-label="MAX"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M6.2 6.4h3.1l2.7 5.3 2.7-5.3h3.1v11.2h-2.5V11l-2.2 4.4h-2.2L8.7 11v6.6H6.2z"/></svg></a></div>
+<div class="crow"><a href="tel:+79108750022">+7 910 875-00-22</a><a class="icm tg" href="https://t.me/+79108750022" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M21.8 4.1 2.9 11.4c-1.3.5-1.3 1.2-.2 1.5l4.8 1.5 11.1-7c.5-.3.9-.1.5.3l-9 8.6-.3 4.4c.5 0 .7-.2 1-.6l2.4-2.3 5 3.7c.9.5 1.5.2 1.8-.9L23.2 5.5c.3-1.2-.5-1.8-1.4-1.4z"/></svg></a><a class="icm mx" href="https://max.ru/u/f9LHodD0cOIa2guzvRmWNece4hvO4FoFel16nZ0ovfkyx26Pc7wH9HhJsGc" target="_blank" rel="noopener" aria-label="MAX"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M6.2 6.4h3.1l2.7 5.3 2.7-5.3h3.1v11.2h-2.5V11l-2.2 4.4h-2.2L8.7 11v6.6H6.2z"/></svg></a></div>
+<div class="crow"><a href="mailto:rezkann@bk.ru">rezkann@bk.ru</a><a class="icm mail" href="mailto:rezkann@bk.ru" aria-label="Почта"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></a></div>
 </div>
 <p class="addr">Мы находимся по адресу: ул. Чаадаева, 44б, Нижний Новгород</p>
 </div></section>
